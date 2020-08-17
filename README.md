@@ -131,7 +131,7 @@ CREATE TABLE SAMPLE1(
 ALTER TABLE EMPLOYEES MODIFY FIRSTNAME VARCHAR2(20) CONSTRAINT EMPLOYEES_FIRSTNAME_NN NOT NULL;
 ```
 
-<img src="Images/notNUllConstraints.PNG">
+<img src="Images/notNullConstraints.PNG">
 
 ### **`UNIQUE`**
 
