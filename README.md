@@ -37,7 +37,7 @@ CREATE TABLE EMPLOYEES(
 DESC EMPLOYEES;
 ```
 
-<img src = "Images/createTable.png">
+<img src = "Images/createTable.PNG">
 
 - **`ALTER`**
 
@@ -50,7 +50,7 @@ DESC EMPLOYEES;
 ALTER TABLE EMPLOYEES ADD DOB DATE;
 ```
 
-<img src="Images/alterTable.png">
+<img src="Images/alterTable.PNG">
 
 #### **ADDING MULTIPLE COLUMNS**
 
@@ -58,25 +58,25 @@ ALTER TABLE EMPLOYEES ADD DOB DATE;
 ALTER TABLE EMPLOYEES ADD(SALARY NUMBER(10,2),COL1 NUMBER);
 ```
 
-<img src="Images/addMultipleCol.png">
+<img src="Images/addMultipleCol.PNG">
 
 ```bash
 ALTER TABLE EMPLOYEES MODIFY COL1 VARCHAR2(10);
 ```
 
-<img src="Images/modifyCol.png">
+<img src="Images/modifyCol.PNG">
 
 ```bash
 ALTER TABLE EMPLOYEES DROP COLUMN SALARY;
 ```
 
-<img src="Images/dropCol.png">
+<img src="Images/dropCol.PNG">
 
 ```bash
 ALTER TABLE EMPLOYEES SET UNUSED COLUMN COL1;
 ```
 
-<img src="Images/setUnusedCol.png">
+<img src="Images/setUnusedCol.PNG">
 
 ```bash
 ALTER TABLE EMPLOYEES DROP UNUSED COLUMN;
@@ -90,7 +90,7 @@ ALTER TABLE EMPLOYEES DROP UNUSED COLUMN;
 DROP TABLE EMPLOYEES;
 ```
 
-<img src="Images/dropTable.png">
+<img src="Images/dropTable.PNG">
 
 - **`TRUNCATE`**
 
@@ -98,7 +98,7 @@ DROP TABLE EMPLOYEES;
 TRUNCATE TABLE EMPLOYEES;
 ```
 
-<img src="Images/truncateTable.png">
+<img src="Images/truncateTable.PNG">
 
 - **`RENAME`**
 
@@ -106,7 +106,7 @@ TRUNCATE TABLE EMPLOYEES;
 ALTER TABLE EMPLOYEES RENAME COLUMN MOBILE_NO TO PHONE_NO;
 ```
 
-<img src="Images/renameCol.png">
+<img src="Images/renameCol.PNG">
 
 ---
 
@@ -131,7 +131,7 @@ CREATE TABLE SAMPLE1(
 ALTER TABLE EMPLOYEES MODIFY FIRSTNAME VARCHAR2(20) CONSTRAINT EMPLOYEES_FIRSTNAME_NN NOT NULL;
 ```
 
-<img src="Images/notNUllConstraints.png">
+<img src="Images/notNUllConstraints.PNG">
 
 ### **`UNIQUE`**
 
@@ -149,7 +149,7 @@ ALTER TABLE EMPLOYEES ADD CONSTRAINT EMPLOYEE_EMAIL_UN UNIQUE(EMAIL_ID);
 ALTER TABLE EMPLOYEES ADD CONSTRAINT EMPLOYEE_MOBILE_UN UNIQUE(MOBILE_NO);
 ```
 
-<img src="Images/uniqueConstraint.png">
+<img src="Images/uniqueConstraint.PNG">
 
 ### **`PRIMARY KEY`**
 
@@ -164,7 +164,7 @@ COL2 NUMBER
 ALTER TABLE EMPLOYEES ADD CONSTRAINT EMPLOYEES_PK PRIMARY KEY(EMP_ID);
 ```
 
-<img src="Images/primaryKey.png">
+<img src="Images/primaryKey.PNG">
 
 ### **`CHECK`**
 
@@ -179,7 +179,7 @@ ALTER TABLE EMPLOYEES
 ADD CONSTRAINT EMP_GENDER_CHECK(GENDER IN('M','F'));
 ```
 
-<img src="Images/checkConstraint.png">
+<img src="Images/checkConstraint.PNG">
 
 ### **`FOREIGN KEY`**
 
@@ -189,8 +189,8 @@ ADD CONSTRAINT EMP_DEPT_REL FOREIGN KEY(DEPT_ID)
 REFERENCES DEPARTMENTS(DEPT_ID) ON DELETE SET NULL;
 ```
 
-<img src="Images/foreignKey.png">
-<img src="Images/foreignKey2.png">
+<img src="Images/foreignKey.PNG">
+<img src="Images/foreignKey2.PNG">
 
 ## Managing Constraints
 
