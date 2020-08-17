@@ -82,7 +82,7 @@ ALTER TABLE EMPLOYEES SET UNUSED COLUMN COL1;
 ALTER TABLE EMPLOYEES DROP UNUSED COLUMN;
 ```
 
-<img src="Images/dropUnusedCol.png">
+<img src="Images/dropUnusedCol.PNG">
 
 - **`DROP`**
 
