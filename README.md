@@ -203,7 +203,7 @@ INSERT INTO EMPLOYEES VALUES(101,'ABC','XYZ','ABC@GMAIL.COM','M','9999999999',SY
 ```
 
 <img src="Images/insertData.PNG">
-<img src="Images/deptinsert.PNG">
+<img src="Images/deptInsert.PNG">
 
 #### **ADDING MULTIPLE DATA**
 
