@@ -16,9 +16,15 @@
 
 ---
 
-### **Data Definition Language (DDL) Statements**
+## Data Definition Language (DDL) Statements
 
-- **`CREATE`**
+- CREATE
+- ALTER
+- DROP
+- TRUNCATE
+- RENAME
+
+- ### **`CREATE`**
 
 ```bash
 CREATE TABLE EMPLOYEES(
@@ -39,7 +45,7 @@ DESC EMPLOYEES;
 
 <img src = "Images/createTable.PNG">
 
-- **`ALTER`**
+- ### **`ALTER`**
 
   1. ADDING COLUMN
   2. MODIFYING COLUMN
@@ -84,7 +90,7 @@ ALTER TABLE EMPLOYEES DROP UNUSED COLUMN;
 
 <img src="Images/dropUnusedCol.PNG">
 
-- **`DROP`**
+- ### **`DROP`**
 
 ```bash
 DROP TABLE EMPLOYEES;
@@ -92,7 +98,7 @@ DROP TABLE EMPLOYEES;
 
 <img src="Images/dropTable.PNG">
 
-- **`TRUNCATE`**
+- ### **`TRUNCATE`**
 
 ```bash
 TRUNCATE TABLE EMPLOYEES;
@@ -100,7 +106,7 @@ TRUNCATE TABLE EMPLOYEES;
 
 <img src="Images/truncateTable.PNG">
 
-- **`RENAME`**
+- ### **`RENAME`**
 
 ```bash
 ALTER TABLE EMPLOYEES RENAME COLUMN MOBILE_NO TO PHONE_NO;
@@ -118,7 +124,7 @@ ALTER TABLE EMPLOYEES RENAME COLUMN MOBILE_NO TO PHONE_NO;
 - CHECK
 - FOREIGN KEY
 
-### **`NOT NULL`**
+- ### **`NOT NULL`**
 
 ```bash
 CREATE TABLE SAMPLE1(
@@ -133,7 +139,7 @@ ALTER TABLE EMPLOYEES MODIFY FIRSTNAME VARCHAR2(20) CONSTRAINT EMPLOYEES_FIRSTNA
 
 <img src="Images/notNullConstraints.PNG">
 
-### **`UNIQUE`**
+- ### **`UNIQUE`**
 
 ```bash
 CREATE TABLE SAMPLE2(
@@ -151,12 +157,12 @@ ALTER TABLE EMPLOYEES ADD CONSTRAINT EMPLOYEE_MOBILE_UN UNIQUE(MOBILE_NO);
 
 <img src="Images/uniqueConstraint.PNG">
 
-### **`PRIMARY KEY`**
+- ### **`PRIMARY KEY`**
 
 ```bash
 CREATE TABLE SAMPLE3(
-COL1 NUMBER CONSTRAINT SAMPLE3_PK PRIMARY KEY,
-COL2 NUMBER
+    COL1 NUMBER CONSTRAINT SAMPLE3_PK PRIMARY KEY,
+    COL2 NUMBER
 );
 ```
 
@@ -166,7 +172,7 @@ ALTER TABLE EMPLOYEES ADD CONSTRAINT EMPLOYEES_PK PRIMARY KEY(EMP_ID);
 
 <img src="Images/primaryKey.PNG">
 
-### **`CHECK`**
+- ### **`CHECK`**
 
 ```bash
 CREATE TABLE SAMPLE4(
@@ -181,7 +187,7 @@ ADD CONSTRAINT EMP_GENDER_CHECK(GENDER IN('M','F'));
 
 <img src="Images/checkConstraint.PNG">
 
-### **`FOREIGN KEY`**
+- ### **`FOREIGN KEY`**
 
 ```bash
 ALTER TABLE EMPLOYEES
@@ -194,9 +200,14 @@ REFERENCES DEPARTMENTS(DEPT_ID) ON DELETE SET NULL;
 
 ---
 
-### **Data Manipulation Language (DML) Statements**
+## Data Manipulation Language (DML) Statements
 
-- **`INSERT`**
+- INSERT
+- UPDATE
+- DELETE
+- MERGE
+
+- ### **`INSERT`**
 
 ```bash
 INSERT INTO EMPLOYEES VALUES(101,'ABC','XYZ','ABC@GMAIL.COM','M','9999999999',SYSDATE,NULL);
@@ -223,7 +234,7 @@ INSERT INTO DEPARTMENTS VALUES(&id,'&name');
 INSERT INTO EMPLOYEES(EMP_ID,FIRSTNAME,LASTNAME,GENDER,DEPT_ID) VALUES(102,'PQR','LMN','M',30);
 ```
 
-- **`UPDATE`**
+- ### **`UPDATE`**
 
 ```bash
 UPDATE EMPLOYEES SET DEPT_ID = 40 WHERE EMP_ID = 101;
@@ -239,7 +250,7 @@ UPDATE EMPLOYEES SET PHONE_NO = '9898989898',LASTNAME = 'JKL',
 
 <img src="Images/updateRow2.PNG">
 
-- **`DELETE`**
+- ### **`DELETE`**
 
 ```bash
 DELETE FROM EMPLOYEES WHERE EMP_ID = 102;
@@ -247,7 +258,7 @@ DELETE FROM EMPLOYEES WHERE EMP_ID = 102;
 
 <img src="Images/deleteRow.PNG">
 
-- **`MERGE`**
+- ### **`MERGE`**
 
 <img src="Images/twoTables.PNG">
 
