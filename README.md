@@ -192,14 +192,77 @@ REFERENCES DEPARTMENTS(DEPT_ID) ON DELETE SET NULL;
 <img src="Images/foreignKey.PNG">
 <img src="Images/foreignKey2.PNG">
 
-## Managing Constraints
-
-- Viewing Constraint
-- Adding Constraint
-- Disabling Constraint
-- Enabling Constraint
-- Dropping Constraint
-
 ---
 
 ### **Data Manipulation Language (DML) Statements**
+
+- **`INSERT`**
+
+```bash
+INSERT INTO EMPLOYEES VALUES(101,'ABC','XYZ','ABC@GMAIL.COM','M','9999999999',SYSDATE,NULL);
+```
+
+<img src="Images/insertData.PNG">
+<img src="Images/deptinsert.PNG">
+
+#### **ADDING MULTIPLE DATA**
+
+```bash
+INSERT INTO DEPARTMENTS VALUES(&id,'&name');
+```
+
+`/` - To continue.
+
+`COMMIT;` - To save all changes.
+
+<img src="Images/multipleRowData.PNG">
+<br/>
+<img src="Images/deptDisplayRows.PNG">
+
+```bash
+INSERT INTO EMPLOYEES(EMP_ID,FIRSTNAME,LASTNAME,GENDER,DEPT_ID) VALUES(102,'PQR','LMN','M',30);
+```
+
+- **`UPDATE`**
+
+```bash
+UPDATE EMPLOYEES SET DEPT_ID = 40 WHERE EMP_ID = 101;
+```
+
+<img src="Images/updateRow.PNG">
+
+```bash
+UPDATE EMPLOYEES SET PHONE_NO = '9898989898',LASTNAME = 'JKL',
+    DATE_OF_JOINING = '20-DEC-16'
+    WHERE EMP_ID = 102;
+```
+
+<img src="Images/updateRow2.PNG">
+
+- **`DELETE`**
+
+```bash
+DELETE FROM EMPLOYEES WHERE EMP_ID = 102;
+```
+
+<img src="Images/deleteRow.PNG">
+
+- **`MERGE`**
+
+<img src="Images/twoTables.PNG">
+
+```bash
+MERGE INTO COPY_EMP C
+  USING EMPLOYEES E
+  ON (E.EMP_ID = C.EMP_ID)
+  WHEN MATCHED THEN
+  UPDATE SET
+  C.FIRSTNAME = E.FIRSTNAME,
+  C.LASTNAME = E.LASTNAME,
+  C.PHONE_NO = E.PHONE_NO,
+  C.DEPT_ID = E.DEPT_ID
+  WHEN NOT MATCHED THEN
+  INSERT VALUES(E.EMP_ID, E.FIRSTNAME, E.LASTNAME, E.PHONE_NO, E.DEPT_ID);
+```
+
+<img src="Images/mergeTable.PNG">
